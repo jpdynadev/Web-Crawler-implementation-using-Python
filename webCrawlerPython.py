@@ -13,7 +13,7 @@ def findDomain(url):
     return root.fld[0:root.fld.find('.')]
 def valid_url(url):
     validated = urlparse(url)
-    return bool(validated.netloc) and bool(validated.scheme)
+    return bool(validated.scheme) and bool(validated.netloc)
 
 def getLinks(url):
     links = {}
@@ -21,7 +21,7 @@ def getLinks(url):
     soup = BeautifulSoup(requests.get(url).content, "html.parser")
 
     for link in  soup.findAll("a"):
-        if(len(links) == 1):
+        if(len(links) == 25):
             return links
         valid = link.attrs.get("href")
         if valid == "" or valid is None:
