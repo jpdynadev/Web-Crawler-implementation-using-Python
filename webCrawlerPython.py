@@ -28,7 +28,7 @@ def getLinks(url):
             continue
         if not valid_url(valid):
             continue
-        if domain in valid and "#" not in valid:
+        if findDomain(valid) == domain and "#" not in valid:
             try:
                 temp = urllib2.urlopen(valid).read()
             except Exception:
