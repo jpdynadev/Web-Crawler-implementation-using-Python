@@ -41,7 +41,7 @@ Initialize dictionary for links, find root domain using helper method, and parse
   if not we get the href link, and validate that it is not empty or null
   we also check that it is a valid url
 ```
-        if domain in valid and "#" not in valid:
+        if findDomain(valid) == domain and "#" not in valid:
 ```
 
 check if root domain is in the link, and that we are not calling any internal page links. 
